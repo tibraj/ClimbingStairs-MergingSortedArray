@@ -11,4 +11,8 @@ function climbingStairs(n) {
     return second;
 }
 
+console.log(climbingStairs(2));
+console.log(climbingStairs(3));
+
+
 //Merging Sorted Array
