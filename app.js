@@ -17,8 +17,8 @@ console.log(climbingStairs(4));
 
 
 //Merging Sorted Array
-
-function mergeSortedArray(nums1, m, nums2, n) {
+// ******************
+function mergeSortedArray1(nums1, m, nums2, n) {
     m--;
     n--;
     let i = nums1.length - 1;
@@ -34,8 +34,15 @@ function mergeSortedArray(nums1, m, nums2, n) {
     }
 }
 
-// console.log(mergeSortedArray([1,2,3,0,0,0], 3, [2,5,6], 3));
-// console.log(mergeSortedArray([1], 1, [], 0));
+function mergeSortedArray2(nums1, m, nums2, n) {
+    for (let i = m; i < nums1.length; i++) {
+        nums1[i] = nums2[i - m];
+    }
+    nums1.sort((a, b) => a - b);
+}
+
+console.log(mergeSortedArray2([1,2,3,0,0,0], 3, [2,5,6], 3));
+console.log(mergeSortedArray2([1], 1, [], 0));
 
 function reverseString(s) {
     // return s.reverse().join('');
