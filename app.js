@@ -74,3 +74,26 @@ function reverseString(s) {
 }
 
 console.log(reverseString(['h','e','l','l','o']));
+
+function reverseVowels(s) {
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+    let stack = []
+    
+    for (let i = 0; i < s.length; i++) {
+      if (vowels.indexOf(s[i]) !== -1) {
+        stack.push(s[i])
+      }
+    }
+    
+    let result = []
+    
+    for (let i = 0; i < s.length; i++) {
+      if (vowels.indexOf(s[i]) !== -1) {
+        result.push(stack.pop())
+      } else {
+        result.push(s[i])
+      }
+    }
+    
+    return result.join('')
+} 
